@@ -1,1 +1,2 @@
 # DIJKSTRA-S_ROUTING_ALGORITHM
+Given a graph and a source vertex in the graph, find the shortest paths from the source to all vertices. We generate a SPT (shortest path tree) with a given source as a root. We maintain two sets, one set contains vertices included in the shortest-path tree, other set includes vertices not yet included in the shortest-path tree. At every step of the algorithm, we find a vertex that is in the other set (set of not yet included) and has a minimum distance from the source.
