@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+int i,j,k,m,p,max,checked[10],table[10],nodes;
+int costmat[10][10]={{0,0,0,0,0,0,0},
+                        {0,0,4,99,99,5,99},
+                        {0,4,0,2,99,99,6},
+                        {0,99,2,0,3,1,99},
+                        {0,99,99,3,0,99,7},
+                        {0,5,99,1,99,0,8},
+                        {0,99,6,99,7,8,0}};;//costmatrix
+void min_value();
+void updated_table();
+int main()
+{
+   cout<<"\nEnter the number of nodes = ";//takes the input from the user
+    cin>>nodes;
+    for(i=0;i<nodes;i++)//executes for all nodes
+    {
+        for(j=0;j<nodes;j++)
+        {
+        table[j]=costmat[i][j];//intialize the table of each node
+        checked[j]=0;initiaze the array to zero 
+        cout<<table[j]<<"   ";//display the   table of each node(ith node)
+        }
+        cout<<"\n";
+        for(j=0;j<nodes;j++)
+        {
+            minimum_value();//computes minimum value in the vector and updates the value which is not visited
+            updated_vector();//updates the new minimum value 
+        }
+       cout<<"For node "<<i<<"\n";
+        for(k=0;k<nodes;k++)
+            cout<<k<<"      "<<table[k]<<"  "<<"\n";
+            cout<<"\n";
+         }
+return 0;
+}
+void min_value()
+{
+     max=99;
+    for(k=0;k<nodes;k++)
+        if(a>table[k] && checked[k]==0)//exceutes only when a node distance is small than previous distance and when not visted
+          {  m=k;
+            max=table[k];
+           // cout<<m<<"  "<<a<<" "<<"\n";
+          }
+     checked[m]=1;
+}
+
+void updated_table()
+{
+    for(k=0;k<nodes;k++)
+    {
+        if((costmat[m][k]+table[m]) < table[k])
+        table[k]=costmat[m][k]+table[m];
+    }
+}
